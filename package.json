@@ -1,0 +1,39 @@
+{
+  "name": "stream-splice",
+  "version": "0.0.0",
+  "description": "Splice multiple streams into a single pipeline. Useful for exposing multi-step piped streams as a single stream.",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:brycebaril/stream-splice.git"
+  },
+  "keywords": [
+    "stream",
+    "streams",
+    "streams2",
+    "transform",
+    "pipeline",
+    "splice"
+  ],
+  "author": "Bryce B. Baril",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/brycebaril/stream-splice/issues"
+  },
+  "dependencies": {
+    "readable-stream": "~1.0.15"
+  },
+  "devDependencies": {
+    "tape": "~1.0.4",
+    "through2-map": "~1.1.0",
+    "through2-filter": "~1.1.0",
+    "stream-spigot": "~2.1.1",
+    "concat-stream": "~1.0.1"
+  }
+}
