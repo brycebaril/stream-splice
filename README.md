@@ -55,7 +55,7 @@ function catLines(filename, options) {
 API
 ===
 
-`require("stream-splice")(stream1 [,stream2] [,...streamN])`
+`splice(stream1 [,stream2] [,...streamN])`
 ---
 
 Creates a pipeline that can be piped into/out of which is composed of all of the spliced streams piped together.
