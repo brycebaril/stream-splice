@@ -12,7 +12,7 @@ E.g. your transform module is actually two consecutive transform operations, but
 module.exports = tx
 var filter = require("through2-filter")
 var map = require("through2-map")
-var splice = require("transform-pipeline")
+var splice = require("stream-splice")
 
 function tx() {
   var noBs = filter(function (chunk) { return /[^bB]/.exec(chunk) })
