@@ -27,13 +27,13 @@
     "url": "https://github.com/brycebaril/stream-splice/issues"
   },
   "dependencies": {
-    "readable-stream": "~1.0.15"
+    "readable-stream": "~1.1.9"
   },
   "devDependencies": {
-    "tape": "~1.0.4",
+    "tape": "~1.1.1",
     "through2-map": "~1.2.0",
-    "through2-filter": "~1.2.0",
-    "stream-spigot": "~2.1.1",
+    "through2-filter": "~1.3.0",
+    "stream-spigot": "~2.1.2",
     "concat-stream": "~1.0.1"
   }
 }

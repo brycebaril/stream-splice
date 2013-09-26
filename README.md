@@ -3,6 +3,9 @@ stream-splice
 
 [![NPM](https://nodei.co/npm/stream-splice.png)](https://nodei.co/npm/stream-splice/)
 
+[![david-dm](https://david-dm.org/brycebaril/stream-splice.png)](https://david-dm.org/brycebaril/stream-splice/)
+[![david-dm](https://david-dm.org/brycebaril/stream-splice/dev-status.png)](https://david-dm.org/brycebaril/stream-splice#info=devDependencies/)
+
 Compose multi-step streams into a single pipeline segment.
 
 E.g. your transform module is actually two consecutive transform operations, but you want it exposed as a single "stream.Transform" object.
