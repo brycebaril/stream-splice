@@ -15,7 +15,7 @@ function splice() {
 
   first.pipe = function (destination, options) {
     Transform.prototype.pipe.call(last, destination, options)
-    return last
+    return destination
   }
 
   return first
