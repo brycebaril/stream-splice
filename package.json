@@ -1,6 +1,6 @@
 {
   "name": "stream-splice",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Splice multiple streams into a single pipeline. Useful for exposing multi-step piped streams as a single stream.",
   "main": "index.js",
   "directories": {
