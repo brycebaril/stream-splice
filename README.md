@@ -1,7 +1,7 @@
 stream-splice
 =====
 
-[![NPM](https://nodei.co/npm/stream-splice.svg)](https://nodei.co/npm/stream-splice/)
+[![NPM](https://nodei.co/npm/stream-splice.png)](https://nodei.co/npm/stream-splice/)
 
 Compose multi-step streams into a single pipeline segment.
 
