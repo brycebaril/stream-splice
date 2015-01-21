@@ -4,6 +4,7 @@ var spigot = require("stream-spigot")
 var filter = require("through2-filter")
 var map = require("through2-map")
 var concat = require("concat-stream")
+var through2 = require("through2")
 var splice = require("../")
 
 test("init", function (t) {
@@ -100,5 +101,36 @@ test("readable + transform", function (t) {
 
   t.equal(pipeline, source, "pipeline is actually the first stream")
 
+  pipeline.pipe(concat(collect))
+})
+
+test("errors", function (t) {
+  t.plan(1)
+  var source = spigot(["a", "b", "c"])
+  var noop = through2()
+
+  var i = 0
+  var tx = through2(function _w(chunk, encoding, callback) {
+    if (++i == 2) {
+      return callback(new Error("CRASH"))
+    }
+    callback(null, chunk)
+  })
+
+
+  source.on("error", function (err) {
+    t.fail("no error here")
+  })
+  noop.on("error", function (err) {
+    t.fail("no error here")
+  })
+  tx.on("error", function (err) {
+    t.ok(err instanceof Error, "error is an Error")
+  })
+  function collect(results) {
+    t.fail("stream not finished because of error")
+  }
+
+  var pipeline = splice(source, noop, tx)
   pipeline.pipe(concat(collect))
 })

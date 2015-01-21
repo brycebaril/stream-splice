@@ -9,7 +9,7 @@ function splice() {
   if (streams.length == 1) return streams[0]
 
   var first = streams[0]
-  var last = streams.reduce(function (prev, curr) {
+  var last = streams.reduce(function join(prev, curr) {
     return prev.pipe(curr)
   })
 

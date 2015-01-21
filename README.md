@@ -1,10 +1,7 @@
 stream-splice
 =====
 
-[![NPM](https://nodei.co/npm/stream-splice.png)](https://nodei.co/npm/stream-splice/)
-
-[![david-dm](https://david-dm.org/brycebaril/stream-splice.png)](https://david-dm.org/brycebaril/stream-splice/)
-[![david-dm](https://david-dm.org/brycebaril/stream-splice/dev-status.png)](https://david-dm.org/brycebaril/stream-splice#info=devDependencies/)
+[![NPM](https://nodei.co/npm/stream-splice.svg)](https://nodei.co/npm/stream-splice/)
 
 Compose multi-step streams into a single pipeline segment.
 
@@ -68,7 +65,7 @@ E.g.
 ```javascript
 source.pipe(splice(a, b, c)).pipe(drain)
 
-// is equivalent to
+// is roughly equivalent to
 
 source.pipe(a)
   .pipe(b)
@@ -76,6 +73,22 @@ source.pipe(a)
   .pipe(drain)
 
 ```
+
+Error Handling:
+---
+
+Just like `pipe`, `splice` does **NOT** attempt to do error forwarding. Sure, it could do something where all the errors in the pipeline are forwarded onto the topmost stream, however this would create a hidden requirement of code organization where your error handlers would have to be above the `splice` call to avoid double-handled errors.
+
+So do this:
+```js
+a.on("error", someErrHandler)
+b.on("error", someErrHandler)
+c.on("error", someErrHandler)
+
+source.pipe(splice(a, b, c)).pipe(drain)
+```
+
+This will let you keep the maximum flexibility with your error handling.
 
 LICENSE
 =======
