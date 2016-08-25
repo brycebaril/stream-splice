@@ -1,7 +1,7 @@
+'use strict'
 module.exports = splice
 
 var Transform = require("stream").Transform
-  || require("readable-stream/transform")
 
 function splice() {
   var streams = [].slice.call(arguments)
